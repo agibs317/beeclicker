@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400&display=swap");
+
+html {
+  background-color: skyblue;
+}
+
+* {
+  padding: 3px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+h3 {
+  color: midnightblue;
+  justify-content: center;
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+}
+h2 {
+  color: midnightblue;
+  justify-content: center;
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+}
+p {
+  color: midnightblue;
+  justify-content: center;
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+}
+
+.result {
+  margin-bottom: 1px;
+  margin-left: 1px;
+  position: fixed;
+  bottom: 0;
+}
+
+.all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  align-items: left;
+  justify-content: left;
+  float: left;
+  width: 800px;
+  height: 120px;
+}
+
+.cloud {
+  margin-top: 70px;
+  width: 200px;
+  height: 80px;
+  background: #eceff1;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+}
+.cloud::after,
+.cloud::before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  background: inherit;
+  border-radius: inherit;
+}
+.cloud::after {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  top: -70px;
+  left: -60px;
+}
+.cloud::before {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  top: -35px;
+  left: 70px;
+}
+
+.container {
+  height: 20em;
+  width: 20em;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+@keyframes fly {
+  50% {
+    transform: translateX(0.003em);
+  }
+}
+@keyframes fly2 {
+  50% {
+    transform: translateY(-1.12em);
+  }
+}
+
+.bee {
+  height: 7.5em;
+  width: 5.5em;
+  background: linear-gradient(
+    to bottom,
+    #f4c13d 28%,
+    #0d323e 28%,
+    #0d323e 50%,
+    #f4c13d 50%,
+    #f4c13d 65%,
+    #0d323e 65%,
+    #0d323e 80%,
+    #f4c13d 80%,
+    #f4c13d 90%,
+    #0d323e 90%,
+    #0d323e 100%
+  );
+  border-radius: 5em;
+  position: absolute;
+  display: flex;
+  gap: 8px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.bee::before,
+.bee::after {
+  content: "";
+  display: block;
+  position: relative;
+  height: 16px;
+  width: 16px;
+  border-radius: 8px;
+  background-color: #0d323e;
+  top: 0.7em;
+  left: 1.6em;
+}
+
+.wings {
+  position: absolute;
+  height: 4em;
+  width: 4em;
+  background-color: #e4eef7;
+  border-radius: 5em;
+  top: 8.5em;
+  left: 4.8em;
+  animation: fly2 4s infinite;
+}
+
+.wings::before {
+  position: absolute;
+  content: "";
+  height: 4em;
+  width: 4em;
+  background-color: #e4eef7;
+  border-radius: 5em;
+  left: 6.35em;
+}
+
+/*.antennae {
+  position: absolute;
+  content: "";
+  width: 0.31em;
+  height: 1.87em;
+  background-color: #0d323e;
+  border-radius: 0.31em;
+  gap: 12px;
+  top: 13.3em;
+  left: 9.8em;
+}*/
+
+.container[data-moving="left"] {
+  padding-right: 24px;
+}
+
+.container[data-moving="right"] {
+  padding-left: 24px;
+}
